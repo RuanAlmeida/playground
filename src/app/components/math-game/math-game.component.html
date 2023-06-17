@@ -1,0 +1,44 @@
+<div class="paper">
+  <div class="cal-expression" *ngFor="let calc of listCalculations">
+    <div
+      *ngIf="calc.hiderNumber"
+      fxLayoutAlign="space-between center"
+      fxLayoutGap="15px"
+    >
+      <div>
+        {{ calc?.smallNumber }}
+      </div>
+      <div>+</div>
+      <div>
+        <input maxlength="2" type="text" [(ngModel)]="calc.responseReceived" />
+      </div>
+      <div>=</div>
+      <div>
+        {{ calc?.response }}
+      </div>
+      <div *ngIf="calc.correctedCalculationIcon">
+        {{ calc.correctedCalculationIcon }}
+      </div>
+    </div>
+    <div
+      *ngIf="!calc.hiderNumber"
+      fxLayoutAlign="space-between center"
+      fxLayoutGap="15px"
+    >
+      <div class="input-response">
+        <input maxlength="2" type="text" [(ngModel)]="calc.responseReceived" />
+      </div>
+      <div>+</div>
+      <div>
+        {{ calc?.bigNumber }}
+      </div>
+      <div>=</div>
+      <div>
+        {{ calc?.response }}
+      </div>
+      <div *ngIf="calc.correctedCalculationIcon">
+        {{ calc.correctedCalculationIcon }}
+      </div>
+    </div>
+  </div>
+</div>

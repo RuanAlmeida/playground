@@ -1,0 +1,20 @@
+.paper {
+    background-color: #3f4395;
+    width: 730px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 370px;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6em;
+}
+.cal-expression{
+    padding: 7px;
+}
+
+.input-response, input{
+    width: 30px;
+}
+
