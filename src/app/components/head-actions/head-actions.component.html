@@ -1,16 +1,54 @@
-<div class="items-actions" fxLayoutGap="30px"  fxLayoutAlign="space-around center">
-    <button mat-fab extended color="primary" (click)="showResult()">
-      <mat-icon>favorite</mat-icon>
-      Show Result
-    </button>
-    <button mat-fab extended color="accent">
-      <mat-icon><span class="material-symbols-outlined">
-        frame_reload
-        </span></mat-icon>
-      Reload
-    </button>
-    <button mat-fab extended color="warn">
-      <mat-icon>favorite</mat-icon>
-      Warn
-    </button>
-  </div>
+<div
+  class="items-actions"
+  fxLayoutGap="30px"
+  fxLayoutAlign="space-between center"
+>
+  <button mat-fab extended (click)="showResult()">
+    <mat-icon>
+      <span class="material-symbols-outlined"> visibility </span>
+    </mat-icon>
+    Show Result
+  </button>
+  <button mat-fab extended (click)="reloadCalculations()">
+    <mat-icon
+      ><span class="material-symbols-outlined"> frame_reload </span>
+    </mat-icon>
+    Reload
+  </button>
+  <button
+    mat-fab
+    extended
+    [matMenuTriggerFor]="menu"
+    aria-label="Example icon-button with a menu"
+  >
+    <mat-icon>
+      <span class="material-symbols-outlined"> calculate </span>
+    </mat-icon>
+    Arithmetic Operations
+  </button>
+</div>
+
+<mat-menu #menu="matMenu">
+  <button mat-menu-item (click)="hendleTypeArithmeticOperationEvent('ADDITION')" >
+    <mat-icon>
+      <span class="material-symbols-outlined"> add </span>
+    </mat-icon>
+    <span>Addition</span>
+  </button>
+  <button mat-menu-item (click)="hendleTypeArithmeticOperationEvent('SUBTRACTION')">
+    <mat-icon>
+      <span class="material-icons-outlined"> horizontal_rule </span>
+    </mat-icon>
+    <span>Subtraction</span>
+  </button>
+  <button mat-menu-item (click)="hendleTypeArithmeticOperationEvent('MULTIPLICATION')">
+    <mat-icon>
+      <span class="material-icons-outlined"> close </span>
+    </mat-icon>
+    <span>Multiplication</span>
+  </button>
+  <button mat-menu-item (click)="hendleTypeArithmeticOperationEvent('DIVISION')" fxLayoutAlign=" center">
+    <mat-icon class="arithmetic-operation-icon"> ÷ </mat-icon>
+    <span>Division</span>
+  </button>
+</mat-menu>

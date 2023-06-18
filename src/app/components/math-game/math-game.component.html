@@ -8,13 +8,17 @@
       <div>
         {{ calc?.smallNumber }}
       </div>
-      <div>+</div>
+      <div>{{ operationSing }}</div>
       <div>
         <input maxlength="2" type="text" [(ngModel)]="calc.responseReceived" />
       </div>
       <div>=</div>
       <div>
-        {{ calc?.response }}
+        {{
+          operationSing !== "÷"
+            ? calc?.response
+            : (calc?.response | number : "1.2-2")
+        }}
       </div>
       <div *ngIf="calc.correctedCalculationIcon">
         {{ calc.correctedCalculationIcon }}
@@ -28,13 +32,17 @@
       <div class="input-response">
         <input maxlength="2" type="text" [(ngModel)]="calc.responseReceived" />
       </div>
-      <div>+</div>
+      <div>{{ operationSing }}</div>
       <div>
         {{ calc?.bigNumber }}
       </div>
       <div>=</div>
       <div>
-        {{ calc?.response }}
+        {{
+          operationSing !== "÷"
+            ? calc?.response
+            : (calc?.response | number : "1.2-2")
+        }}
       </div>
       <div *ngIf="calc.correctedCalculationIcon">
         {{ calc.correctedCalculationIcon }}

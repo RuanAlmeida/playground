@@ -8,5 +8,9 @@ export class ActionsService {
 
   showResultEventButton = new BehaviorSubject(false);
 
+  reloadCalculationsEvent = new BehaviorSubject(false);
+
+  typeArithmeticOperationEvent = new BehaviorSubject('');
+
   constructor() { }
 }
